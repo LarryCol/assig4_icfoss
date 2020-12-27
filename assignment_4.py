@@ -46,8 +46,8 @@ st.markdown("""### Features of the data like
 """)
 
 # red_wine.info()
-
-st.table(red_wine.describe())
+if st.checkbox('click to view the data'):
+  st.table(red_wine.describe())
 
 st.markdown("""- maximum quality of red wine here is 8 on a scale of 10.""")
 
@@ -91,10 +91,10 @@ st.pyplot()
 """### Heat map for the correlation matrix
 - perceived quality has considerable positive relation with alcohol content, citric acid content, and sulphates.
 """
-
-plt.figure(figsize=(12,12))
-sns.heatmap(red_wine.corr(), cmap='coolwarm', annot=True)
-st.pyplot()
+if st.checkbox('click to view the heat map'):
+  plt.figure(figsize=(12,12))
+  sns.heatmap(red_wine.corr(), cmap='coolwarm', annot=True)
+  st.pyplot()
 
 """## Analysis of white wine data"""
 
@@ -112,8 +112,8 @@ st.table(white_wine.head(6))
 # white_wine.info()
 
 """- white wine dataset has larger number of 4898 samples, so the analysis can be more accurate"""
-
-st.table(white_wine.describe())
+if st.checkbox('click here to view the data'):
+  st.table(white_wine.describe())
 
 """### Properties of white wine samples with maximum quality"""
 
@@ -158,10 +158,10 @@ st.pyplot()
 """### Heat map for the correlation matrix
 - perceived quality has considerable positive relation with alcohol content, and inverse relation with density of the wine
 """
-
-plt.figure(figsize=(12,12))
-sns.heatmap(white_wine.corr(), cmap='coolwarm', annot=True)
-st.pyplot()
+if st.checkbox('click the box to view the heatmap'):
+  plt.figure(figsize=(12,12))
+  sns.heatmap(white_wine.corr(), cmap='coolwarm', annot=True)
+  st.pyplot()
 
 """## Use case
 - above dataset can be used to predict physiochemical features of wine to get a higher quality product.
